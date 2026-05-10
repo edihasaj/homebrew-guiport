@@ -1,9 +1,9 @@
 class Guiport < Formula
   desc "Playwright for desktop apps, built for coding agents"
   homepage "https://guiport.dev"
-  url "https://github.com/edihasaj/guiport/releases/download/v0.1.0/guiport-0.1.0-macos-universal.tar.gz"
-  sha256 "04842517eb0adfbdf3daefd5d3750c64cbaeda06d0f1c8a8dc940c76daae643b"
-  version "0.1.0"
+  url "https://github.com/edihasaj/guiport/releases/download/v0.1.1/guiport-0.1.1-macos-universal.tar.gz"
+  sha256 "11cc47a7b81306cbfe18c2969f72fe566bf00ed86358ae9f3844be3bcbef7715"
+  version "0.1.1"
   license "MIT"
 
   depends_on macos: :ventura
@@ -32,6 +32,6 @@ class Guiport < Formula
   end
 
   test do
-    assert_match "0.1.0", shell_output("#{bin}/guiport --version")
+    assert_match "0.1.1", shell_output("#{bin}/guiport --version")
   end
 end
