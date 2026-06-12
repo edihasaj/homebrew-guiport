@@ -3,7 +3,6 @@ class Guiport < Formula
   homepage "https://guiport.dev"
   url "https://github.com/edihasaj/guiport/releases/download/v0.1.30/guiport-0.1.30-macos-universal.tar.gz"
   sha256 "8f8d708b82376711e72d682fff9b988c27b8ef1512cc36f693bcebf4b13ea667"
-  version "0.1.30"
   license "MIT"
 
   depends_on macos: :ventura
@@ -19,11 +18,12 @@ class Guiport < Formula
         1. Accessibility    — System Settings > Privacy & Security > Accessibility
         2. Screen Recording — System Settings > Privacy & Security > Screen Recording
 
-      Add the terminal app you'll run guiport from (Terminal, iTerm, Ghostty, etc.).
-
       Trigger the prompts and open the right panes with:
 
         guiport doctor --fix
+
+      This also registers ~/Applications/guiport.app so macOS shows a real
+      guiport app entry in the permission lists.
 
       Then verify:
 
