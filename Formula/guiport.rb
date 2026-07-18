@@ -1,14 +1,17 @@
 class Guiport < Formula
   desc "Playwright for desktop apps, built for coding agents"
   homepage "https://guiport.dev"
-  url "https://github.com/edihasaj/guiport/releases/download/v0.1.52/guiport-0.1.52-macos-universal.tar.gz"
-  sha256 "183a15df10650c7358101b4ba4a1dde76f54f914b5ffa12bbacb4c953b39085d"
+  url "https://github.com/edihasaj/guiport/releases/download/v0.1.53/guiport-0.1.53-macos-universal.tar.gz"
+  sha256 "b7c5b1602b8fd80c485ab422e7c39143e17c8f534090bce8f71da86bc45fdaab"
   license "MIT"
 
   depends_on macos: :ventura
 
   def install
-    bin.install "guiport"
+    # Ship + run from the signed guiport.app so macOS shows the real logo in
+    # the Privacy panes and the TCC grant survives upgrades (guiport issue #4).
+    prefix.install "guiport.app"
+    bin.install_symlink prefix/"guiport.app/Contents/MacOS/guiport" => "guiport"
   end
 
   def caveats
@@ -32,6 +35,6 @@ class Guiport < Formula
   end
 
   test do
-    assert_match "0.1.52", shell_output("#{bin}/guiport --version")
+    assert_match "0.1.53", shell_output("#{bin}/guiport --version")
   end
 end
