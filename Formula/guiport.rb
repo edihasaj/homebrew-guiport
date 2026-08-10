@@ -25,8 +25,8 @@ class Guiport < Formula
 
         guiport doctor --fix
 
-      This also registers ~/Applications/guiport.app so macOS shows a real
-      guiport app entry in the permission lists.
+      Homebrew already runs guiport from its signed app bundle, so this enrolls
+      one stable guiport identity in the permission lists.
 
       Then verify:
 
